@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: nhatuser
+      POSTGRES_PASSWORD: nhatpass
+      POSTGRES_DB: nhatdb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  backend:
+    build: ./backend
+    restart: on-failure
+    env_file: ./backend/.env.example
+    depends_on:
+      - db
+    ports:
+      - '4000:4000'
+
+  frontend:
+    build: ./frontend
+    restart: on-failure
+    environment:
+      - VITE_API_URL=http://localhost:4000
+    ports:
+      - '3000:5173'
+
+volumes:
+  db_data:
