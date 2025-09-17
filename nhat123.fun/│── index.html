@@ -1,1 +1,244 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang ch&#x1EE7;</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" />
+    <link rel="stylesheet" href="/ZZZC_PRO.styles.css" />
+</head>
+<body>
+    <main b-uzrcq8a87h role="main" class="container">
+        
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/modern-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+<div id="mainContent" class="container mt-4">
+
+
+
+    <!-- Nút điều khiển -->
+    <div class="mb-3">
+        <button class="btn btn-settings w-100" onclick="window.open('https://auraesoftware.com/zalo.jpg', '_blank');">
+            <i class="fas fa-plus-circle"></i> Cài thêm web mới - Quét mã Zalo
+        </button>
+    </div>
+
+
+    <div class="mb-3">
+        <a href="/Settings" class="btn btn-settings w-100">
+            <i class="fas fa-cog"></i> Cài đặt Hệ thống
+        </a>
+    </div>
+
+    <div class="mb-3">
+        <form method="post" action="/Login/Logout">
+            <button type="submit" class="btn btn-danger w-100">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+            </button>
+        </form>
+    </div>
+
+
+            <div class="card mb-3">
+                <div class="card-header"><i class="fas fa-user"></i> Tài Khoản</div>
+                <div class="card-body">
+
+                        <p class="empty-message">Chưa có tài khoản nào được lấy.</p>
+
+                    <!-- Nút lấy & kích tài khoản -->
+                    <div class="d-flex flex-column align-items-center mt-3">
+                        <a href="/Home/GetAccount" class="btn btn-primary w-100 mb-2">
+                            <i class="fas fa-download"></i> Lấy Tài khoản
+                        </a>
+                            <button class="btn btn-accent w-100" disabled>
+                                <i class="fas fa-user-check"></i> Yêu cầu kích điểm
+                            </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header"><i class="fas fa-film"></i> Xem Video</div>
+                <div class="card-body">
+                    <div class="video-buttons">
+                            <a href="/Home/GetRandomVideo?type=regular"
+                               target="_blank" class="btn btn-video-action mb-2">
+                                <i class="fas fa-play-circle"></i> Video Thường 60p
+                            </a>
+                            <!-- Nút mới: Video Thường 180p -->
+                            <a href="https://www.icloud.com/shortcuts/ec02e6af6b2b45feb019ce8c63873677"
+                               target="_blank"
+                               class="btn btn-video-action">
+                                <i class="fas fa-play-circle"></i> Video Thường 180p
+                            </a>
+                            <a href="/Home/GetRandomVideo10?type=lite"
+                               target="_blank" class="btn btn-video-action">
+                                <i class="fas fa-play-circle"></i> Video Lite 10p
+                            </a>
+                            <a href="/Home/GetRandomVideo?type=lite"
+                               target="_blank" class="btn btn-video-action">
+                                <i class="fas fa-play-circle"></i> Video Lite 60p
+                            </a>
+                            <!-- Nút mới: Video Lite 180p -->
+                            <a href="https://www.icloud.com/shortcuts/06edcf1bdaa24bc791c865be824172e4"
+                               target="_blank"
+                               class="btn btn-video-action">
+                                <i class="fas fa-play-circle"></i> Video Lite 180p
+                            </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header"><i class="fas fa-envelope"></i> Email Rút tiền nhanh</div>
+                <div class="card-body">
+                    <div class="input-group mb-1">
+                        <input id="randomEmail" type="text" class="form-control" value="7wwru9ncdz@ch&#x1B0;a kh&#x1EA3; d&#x1EE5;ng" readonly>
+                        <button class="btn btn-copy" type="button" onclick="copyText('randomEmail')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <span id="feedback-randomEmail" class="copy-feedback">Đã copy!</span>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header"><i class="fas fa-cloud"></i> Thông tin iCloud</div>
+                <div class="card-body">
+                        <p class="empty-message">
+                            Chưa có thông tin iCloud. <a href="/Settings">Cài đặt ngay</a>
+                        </p>
+                </div>
+            </div>
+</div> <!-- /#mainContent -->
+
+    </main>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo"></script>
+    
+    <!--──────── copyText & GetCode ────────-->
+    <script>
+        function copyText(id){
+            var inp=document.getElementById(id);
+            inp.select(); inp.setSelectionRange(0,99999);
+            document.execCommand("copy");
+            var fb=document.getElementById("feedback-"+id);
+            fb.style.display="block"; setTimeout(()=>fb.style.display="none",2000);
+        }
+
+              document.addEventListener("DOMContentLoaded", function () {
+                       // --- Auto update OTP ---
+        var secret = '';
+        if (secret) {
+            var otpInput = document.getElementById('otpCurrent');
+            var countdown = document.getElementById('otpCountdown');
+            var remain = 0;
+            var period = 30;
+
+            function refreshOtp() {
+                fetch('/Home/GetOtp' + '?secret=' + encodeURIComponent(secret))
+                    .then(r => r.json())
+                    .then(d => {
+                        if (d.status) {
+                            otpInput.value = d.otp || '';
+                            remain = d.remaining || period;
+                            countdown.textContent = remain + 's';
+                        }
+                    })
+                    .catch(() => { /* im lặng nếu lỗi tạm thời */ });
+            }
+
+            // Tick mỗi 1s, về 0 thì gọi server lấy OTP mới
+            setInterval(function () {
+                if (remain <= 1) {
+                    refreshOtp();
+                } else {
+                    remain--;
+                    countdown.textContent = remain + 's';
+                }
+            }, 1000);
+        }
+
+
+
+
+            var btn = document.getElementById('getCodeBtn');
+            if (!btn) return;
+
+            btn.addEventListener('click', function () {
+                document.getElementById('codeResult').style.display = 'block';
+                document.getElementById('codeLoading').style.display = 'flex';
+                document.getElementById('codeData').style.display = 'none';
+                document.getElementById('codeError').style.display = 'none';
+
+                // Thu thập accountData
+                var arr = [], i = 0, el = document.getElementById('accountData' + i);
+                while (el) { arr.push(el.value); el = document.getElementById('accountData' + (++i)); }
+
+                fetch('/Home/AnalyzeAccountData', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(arr)
+                })
+                    .then(r => r.json())
+                    .then(d => {
+                        // Chỉ check bắt buộc email
+                        if (!d.email) throw new Error('Thiếu dữ liệu email.');
+
+                        // Truyền tất cả trường lấy được sang GetCode
+                        let postData = {
+                            email: d.email,
+                            refreshToken: d.refreshToken,
+                            clientId: d.clientId,
+                            password: d.password
+                        };
+
+                        return fetch('/Home/GetCode', {
+                            method: 'POST', headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(postData)
+                        });
+                    })
+                    .then(r => r.json())
+                    .then(d => {
+                        document.getElementById('codeLoading').style.display = 'none';
+                        var dataDiv = document.getElementById('codeData'); dataDiv.style.display = 'block';
+
+                        if (d.status === true) {
+                            dataDiv.innerHTML = `
+                                <div class="success-message">Lấy code thành công!</div>
+                                <div class="mb-2">
+                                    <label>Code:</label>
+                                    <div class="input-group mb-1">
+                                        <input id="resultCode" class="form-control" value="${d.code || ''}" readonly>
+                                        <button class="btn btn-copy" onclick="copyText('resultCode')"><i class="fas fa-copy"></i></button>
+                                    </div><span id="feedback-resultCode" class="copy-feedback">Đã copy!</span>
+                                </div>
+                                <div class="mb-2">
+                                    <label>Content:</label>
+                                    <div class="input-group mb-1">
+                                        <input id="resultContent" class="form-control" value="${d.content || ''}" readonly>
+                                        <button class="btn btn-copy" onclick="copyText('resultContent')"><i class="fas fa-copy"></i></button>
+                                    </div><span id="feedback-resultContent" class="copy-feedback">Đã copy!</span>
+                                </div>`;
+                        } else {
+                            document.getElementById('codeError').style.display = 'block';
+                            document.getElementById('codeError').textContent = d.message || 'Không có code mới.';
+                        }
+                    })
+                    .catch(err => {
+                        document.getElementById('codeLoading').style.display = 'none';
+                        document.getElementById('codeError').style.display = 'block';
+                        document.getElementById('codeError').textContent = err.message || 'Đã xảy ra lỗi.';
+                    });
+            });
+        });
+
+    </script>
+
+</body>
+</html>
+
